@@ -1,0 +1,10 @@
+1️⃣ Total Sales
+SELECT SUM(Amount) AS Total_Sales FROM Sales;
+2️⃣ Total Number of Orders
+SELECT COUNT(*) AS Total_Orders FROM Sales;
+3️⃣ Sales by Customer
+SELECT Customer, SUM(Amount) AS Total_Sales FROM Sales GROUP BY Customer;
+4️⃣ Categorize Orders Using CASE
+SELECT Customer, Amount, CASE WHEN Amount >= 1000 THEN 'High Value' ELSE 'Regular' END AS Order_Category FROM Sales;
+5️⃣ Find Customers with Sales Above Average
+SELECT Customer, SUM(Amount) AS Total_Sales FROM Sales GROUP BY Customer HAVING SUM(Amount) > (SELECT AVG(Amount) FROM Sales);
